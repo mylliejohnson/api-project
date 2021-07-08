@@ -120,13 +120,25 @@ a:hover{
 }
 
 
+.product-img{
+    width:175px;
+    margin-right: 10px;
+}
+
+.product-list{
+    display: flex;
+    background-color: black;
+    flex-direction: row;
+}
+
 @media only screen and (max-width: 800px) {
+
+
 
     .Makeup {
       display: flex;
       flex-direction: column-reverse;
       order: 2;
-      
     }
 
     .listOfCategories{

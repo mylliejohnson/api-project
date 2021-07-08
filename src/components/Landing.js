@@ -16,7 +16,7 @@ function Landing(props) {
 	return (
 		<div className="landing">
 		<div className="headings">
-			<h1 style={{fontSize: "100px"}}>IRONMAKEUP</h1>
+			<h1>IRONMAKEUP</h1>
 			<h2>one stop beauty shop</h2>
 			</div>
 

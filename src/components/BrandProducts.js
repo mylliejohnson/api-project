@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, Route, Switch} from 'react-router-dom'
+import Header from './Header';
 
 function BrandProducts(props) {
 
@@ -9,36 +10,36 @@ let [products, setProducts] = useState([])
     useEffect(() => {
         console.log("is this effect working?")
       axios
-      .get(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=${props.match.params.brandProducts}`)
+      .get(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=${props.match.params.brandProducts}`)
       .then((res) => {
-          console.log(res.data)
         setProducts(res.data)
       })
      }, [])
 
-     console.log(products)
+
+     //map -> link to each product details
+     // this is my list of beer !
 
 function mapped (){ 
 return products.map((items) => {
     return (
-        <div>
-            <ul>{items.name}</ul>
+        <div className="product-list">
+        <div className="prodcuct-img">
+            <img src={items.image_link} className="prodcuct-img"/>
+        </div>
+           <div>
+           <h2>{items.name}</h2>
             <ul>{items.brand}</ul>
-            <ul>${items.price}</ul>
-            <ul>{items.description}</ul>
+            <ul><strong>${items.price}</strong></ul>
+           </div>
         </div>
     )
     })
 }
-     function saySomething(){
-         return(
-             <div>HELLO! this is the products page</div>
-         )
-     }
 
     return (
-        <div>
-            {saySomething()}
+        <div >
+            {Header()}
             {mapped()}
         </div>
     );

@@ -6,6 +6,9 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 
 function Makeup(props) {
+
+	// arrays
+
 	let allBrands = [
 		'almay',
 		'alva',
@@ -78,27 +81,13 @@ function Makeup(props) {
 		'nail polish',
 	];
 
-
-	console.log(props)
-
-	let [list, setList] = useState(allBrands); // brands array
-
+	// let [list, setList] = useState(allBrands); // brands array
 	let [catList, setCatList] = useState(allCategories); // categories array
 
-	// let [makeup, setMakeup] = useState([]); // set api
-
-	// useEffect(() => {
-	// 	axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=${props.match.params.brandProducts}`).then((res) => {
-	// 		setMakeup(res.data);
-	// 		console.log(res.data)
-	// 	});
-	// }, []);
-
-	// console.log(props)
-	
+	// map groups 
 
 	let brandLink = () => {
-		return list.map((item) => {
+		return allBrands.map((item) => {
 			return (
 				<Link to={`/brand/${item}`} className="link link-hover">
 					<li>{item}</li>
@@ -109,36 +98,34 @@ function Makeup(props) {
 
 	let catLink = () => {
 		return catList.map((item) => {
-			return (
-				<Link to={`/category/${item.product_type}`} className="link link-hover">
+			return(
+				<Link to={`/category/${item}`} className="link link-hover">
 					<li>{item}</li>
 				</Link>
-				
-			);
+			)
 		});
 	};
 
-console.log(catLink())
+	// main return !
 
 	return (
-<div>
-		<Header/>
-		<div className="Makeup">
-		
-			<div className="listOfBrands">
-				<h2>Shop Brands</h2>
-                <ul className="ul" style={{columns: '4'}}>
-                {brandLink()}
-                </ul>
-			</div>
+		<div>
+			<Header />
+			<div className="Makeup">
+				<div className="listOfBrands">
+					<h2>Shop Brands</h2>
+					<ul className="ul" style={{ columns: '4' }}>
+						{brandLink()}
+					</ul>
+				</div>
 
-			<div className="listOfCategories">
-				<h2>Shop Categories</h2>
-                <ul className="ul">
-				{catLink()}
-                </ul>
+				<div className="listOfCategories">
+					<h2>Shop Categories</h2>
+					<ul className="ul">
+						{catLink()}
+					</ul>
+				</div>
 			</div>
-		</div>
 		</div>
 	);
 }
