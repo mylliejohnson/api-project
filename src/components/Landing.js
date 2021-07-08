@@ -14,7 +14,7 @@ function Landing(props) {
 	}, []);
 
 	return (
-		<div style={{height:"100vh"}}>
+		<div className="landing">
 		<div className="headings">
 			<h1 style={{fontSize: "100px"}}>IRONMAKEUP</h1>
 			<h2>one stop beauty shop</h2>
@@ -22,12 +22,12 @@ function Landing(props) {
 
 			<div className="quote">
 				<i>{quote.text} </i>
-				<strong>- {quote.author}</strong>
+				<p></p><strong>- {quote.author}</strong><p></p>
 			</div>
 
 			<div className="lets-shop">
 				<Link to="/brands" className="link">
-					<button className="shopping">LET'S GO SHOPPING!! ➩➩➩</button>
+					<button className="shopping">LET'S GO SHOPPING!! </button>
 				</Link>
 			</div>
 		</div>

@@ -3,9 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, Route, Switch } from 'react-router-dom';
-
-import Header from './components/Header';
-
+import Header from './Header';
 
 function Makeup(props) {
 	let allBrands = [
@@ -80,21 +78,29 @@ function Makeup(props) {
 		'nail polish',
 	];
 
-	let [list, setList] = useState(allBrands); // brands array
-	let [makeup, setMakeup] = useState([]); // set api
-	let [catList, setCatList] = useState(allCategories);
 
-	useEffect(() => {
-		axios.get('http://makeup-api.herokuapp.com/api/v1/products.json').then((res) => {
-			setMakeup(res.data);
-			console.log(makeup);
-		});
-	}, []);
+	console.log(props)
+
+	let [list, setList] = useState(allBrands); // brands array
+
+	let [catList, setCatList] = useState(allCategories); // categories array
+
+	// let [makeup, setMakeup] = useState([]); // set api
+
+	// useEffect(() => {
+	// 	axios.get(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=${props.match.params.brandProducts}`).then((res) => {
+	// 		setMakeup(res.data);
+	// 		console.log(res.data)
+	// 	});
+	// }, []);
+
+	// console.log(props)
+	
 
 	let brandLink = () => {
 		return list.map((item) => {
 			return (
-				<Link to={`/brand/${item}`} className="link">
+				<Link to={`/brand/${item}`} className="link link-hover">
 					<li>{item}</li>
 				</Link>
 			);
@@ -104,21 +110,26 @@ function Makeup(props) {
 	let catLink = () => {
 		return catList.map((item) => {
 			return (
-				<Link to={`/category/${item}`} className="link">
+				<Link to={`/category/${item.product_type}`} className="link link-hover">
 					<li>{item}</li>
 				</Link>
+				
 			);
 		});
 	};
 
+console.log(catLink())
+
 	return (
-		<div className="Makeup" style={{ marginTop: '25px' }}>
+<div>
+		<Header/>
+		<div className="Makeup">
+		
 			<div className="listOfBrands">
 				<h2>Shop Brands</h2>
-                <ul className="ul" style={{columns: '3'}}>
+                <ul className="ul" style={{columns: '4'}}>
                 {brandLink()}
                 </ul>
-				
 			</div>
 
 			<div className="listOfCategories">
@@ -127,6 +138,7 @@ function Makeup(props) {
 				{catLink()}
                 </ul>
 			</div>
+		</div>
 		</div>
 	);
 }
