@@ -127,7 +127,6 @@ a:hover{
 
 .product-list{
     display: flex;
-    background-color: black;
     flex-direction: row;
 }
 
