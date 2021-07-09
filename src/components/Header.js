@@ -12,8 +12,8 @@ function Header(props) {
 			<div className="header-links">
 				<Link to="/brands" className="link header-link">
 					Brands & Categories 
-				</Link>| 
-				<Link to="/connect" className="link header-link">Stay connected!</Link>|
+				</Link>
+				<Link to="/connect" className="link header-link">Stay connected!</Link>
 				<Link to="/wishlist" className="link header-link">Wishlist</Link>
 			</div>
 		</nav>

@@ -12,13 +12,15 @@ function Post(props) {
 		setSignUp(copySignUp);
 	};
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(signUp);
 		axios
-			.post(`https://ironrest.herokuapp.com/makeup`, signUp)
+			.post(`https://ironrest.herokuapp.com/makeup_users`, signUp)
 			.then((res) => {
 				console.log(res);
+				localStorage.setItem("email", signUp.email)
+				console.log(localStorage)
 			})
 			.catch(console.error);
 	};

@@ -16,6 +16,19 @@ let [products, setProducts] = useState([])
       })
      }, [])
 
+
+    //  let [wish, setWish] = useState({})
+
+    //  const handleSubmit = async (e) => {
+    //      e.preventDefault()
+    //      axios.post(`https://ironrest.herokuapp.com/makeup`, wish)
+    //      .then((res) => {
+    //          console.log(res)
+    //      })
+    //      .catch(console.log(error))
+    //  }
+
+
      //map -> link to each product details
      // this is my list of beer !
 
@@ -24,7 +37,7 @@ return products.map((items) => {
     return (
         <div className="product-list">
             <div>
-                <img src={items.image_link}/>
+                <img src={items.image_link} style={{ width: '150px' }}/>
             </div>
 
             <div>

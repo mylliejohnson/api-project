@@ -11,6 +11,14 @@ let [product, setProduct] = useState([])
       setProduct(res.data)
      }, [])
 
+     console.log(product)
+
+     async function addFavorite(product){
+         product.user = localStorage.getItem("email")
+         let res = await axios.post('https://ironrest.herokuapp.com/makeup_faves', product)
+         console.log(res.data)
+     }
+
     return (
       
         <div style={{margin:"auto"}}>
@@ -20,7 +28,8 @@ let [product, setProduct] = useState([])
             <h3>${product.price}</h3>
             <img src={product.image_link} /> 
             <h2>{product.brand}</h2>
-            <a href={product.product_link} target="_blank" style={{border: "2px dashed black", padding:'3px'}}>Product Link Here</a> |   <button>❤︎ add to wishlist</button>
+            <a href={product.product_link} target="_blank" style={{border: "2px dashed black", padding:'3px'}} >Product Link Here</a> |   
+            <button onClick={() => addFavorite(product)}>❤︎ add to wishlist</button>
             <p>{product.description}</p>
             <div>
             </div>
