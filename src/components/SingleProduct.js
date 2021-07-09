@@ -13,11 +13,17 @@ let [product, setProduct] = useState([])
 
     return (
       
-        <div>
+        <div style={{margin:"auto"}}>
         <Header/>
-           <div>
-           <h1>{product.name}</h1> 
-           <img src={product.image_link} />
+           <div className="SingleProduct" style={{width:"70%"}}>
+            <h1>{product.name}</h1>
+            <h3>${product.price}</h3>
+            <img src={product.image_link} /> 
+            <h2>{product.brand}</h2>
+            <a href={product.product_link} target="_blank" style={{border: "2px dashed black", padding:'3px'}}>Product Link Here</a> |   <button>❤︎ add to wishlist</button>
+            <p>{product.description}</p>
+            <div>
+            </div>
            </div>
         </div>
     );

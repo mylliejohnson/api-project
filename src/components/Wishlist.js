@@ -22,7 +22,7 @@ function Wishlist(props) {
     
 
     return (
-        <div>
+        <div className="Wishlist">
             this is the wishlist
         </div>
     );
