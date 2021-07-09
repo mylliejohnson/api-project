@@ -17,7 +17,7 @@ function Landing(props) {
 		<div className="landing">
 		<div className="headings">
 			<h1>IRONMAKEUP</h1>
-			<h2>one stop beauty shop</h2>
+			<h2>the one stop beauty shop</h2>
 			</div>
 
 			<div className="quote">
@@ -30,6 +30,10 @@ function Landing(props) {
 					<button className="shopping">LET'S GO SHOPPING!! </button>
 				</Link>
 			</div>
+
+			<footer>
+				Created by Myllie Johnson | <a href="https://github.com/mylliejohnson/api-project">GitHub</a>
+			</footer>
 		</div>
 	);
 }

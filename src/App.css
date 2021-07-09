@@ -33,13 +33,13 @@
 
 .landing h1 {
     margin:0;
-    padding-top: 50px;
-    overflow:hidden ;
     margin-bottom: 10px;
+    font-size: 5em;
 }
 
 .landing{
     height: 100vh;
+    overflow:hidden ;
 }
 
 .quote{
@@ -50,16 +50,21 @@
     width: 350px;
     text-align: center;
     margin: 0 auto;
+    margin-top: 100px;
 }
 
 .shopping{
     margin: 50px;
     font-size: 1em;
-    border: 0 5px 10px 2px;
+    border: 3px solid black;
     border-radius: 2px;
-    background:#eee;
+    background: white;
     font-family: inherit;
     padding: 10px;
+}
+
+.shopping:hover{
+    cursor: pointer;
 }
 
 .link{
@@ -69,9 +74,7 @@
 
 .link-hover:hover{
     color:#d299c2;
-    text-decoration: underline;
     font-weight: bolder;
-    font-size: 1.2em;
 }
 
 /* makeip page */
@@ -85,6 +88,9 @@
 
 .Makeup h2{
     margin-top:0;
+    background-color:white;
+    border: 3px solid black;
+    padding:5px;
 }
 
 li {
@@ -94,8 +100,6 @@ li {
 
 .listOfBrands, .listOfCategories {
     height: 100%;
-    background-color: white;
-    border: 3px solid black;
     margin: 10px;
     padding: 10px;
 }
@@ -107,6 +111,8 @@ li {
 .ul {
     margin: 0;
     padding: 0;
+    background-color: white;
+    border: 3px solid black;
 }
 
 a {
@@ -130,9 +136,47 @@ a:hover{
     flex-direction: row;
 }
 
+footer{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 2.5em;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: inherit;
+    margin: 0 auto;
+}
+
+.center-form{
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    font-family: inherit;
+    padding: 10px;
+    margin-top: 10px;
+    width: 300px;
+    border: 3px solid black;
+}
+
+.submit-btn {
+    width: 150px;
+    padding:15px;
+    background-color: white;
+    border: 3px solid black;
+    margin: 50px;
+    font-family: inherit;
+
+}
+
+
 @media only screen and (max-width: 800px) {
-
-
 
     .Makeup {
       display: flex;
@@ -146,6 +190,10 @@ a:hover{
 
     .listOfCategories .ul {
         columns: 2;
+    }
+
+    .listOfBrands .ul {
+        columns: 3;
     }
 
   }

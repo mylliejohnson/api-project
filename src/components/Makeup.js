@@ -1,8 +1,8 @@
 // --------- BRANDS AND CATEGORIES LISTS -------- //
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 
 function Makeup(props) {
@@ -81,10 +81,7 @@ function Makeup(props) {
 		'nail polish',
 	];
 
-	// let [list, setList] = useState(allBrands); // brands array
-	let [catList, setCatList] = useState(allCategories); // categories array
-
-	// map groups 
+	// map data 
 
 	let brandLink = () => {
 		return allBrands.map((item) => {
@@ -97,7 +94,7 @@ function Makeup(props) {
 	};
 
 	let catLink = () => {
-		return catList.map((item) => {
+		return allCategories.map((item) => {
 			return(
 				<Link to={`/category/${item}`} className="link link-hover">
 					<li>{item}</li>

@@ -13,6 +13,7 @@ function Header(props) {
 				<Link to="/brands" className="link header-link">
 					Brands & Categories
 				</Link>
+				<Link to="/connect"><button>Stay connected!</button></Link>
 			</div>
 		</nav>
 	);
