@@ -21,23 +21,37 @@ useEffect (function() {
 
 // map wish.map
 
+const wishStyle = {
+    backgroundColor: "white",
+    border: "3px solid black",
+    width: '80%',
+    margin: '10px',
+    display: 'flex',
+    alignItems: 'center',
+    textAlign: 'left'
+}
+
 const showWishes = () => {
     return wish.map((item) => {
         return (
-            <div>
-            <img src={item.image_link} style={{width:'100px'}}/>
-            <Link to={`/product/${item.id}`}>
+            <div id="wish-product" style={wishStyle}>
+            <img src={item.image_link} style={{width:'100px', marginRight: '20px'}}/>
+            <div><Link to={`/product/${item.id}`}>
                 <h3>{item.name}</h3>
-                </Link>
+                
+                </Link> 
+                <h4><span>{item.brand}  | </span>${item.price}</h4>
+                </div>
             </div>
         )
     })
 }
 
     return (
-        <div className="Wishlist">
+        <div>
         <Header/>
-            {showWishes()}
+        <div className="Wishlist" style={{marginLeft:'auto'}}>
+            {showWishes()}</div>
         </div>
     );
 }

@@ -20,7 +20,7 @@
 }
 
 .header-link:hover {
-	background: lightgray;
+	background: #c1c161;
 	font-weight: bolder;
 	padding: 2px;
 }
@@ -66,6 +66,7 @@
 
 .shopping:hover {
 	cursor: pointer;
+	background-color: #c1c161;
 }
 
 .link {
@@ -74,7 +75,7 @@
 }
 
 .link-hover:hover {
-	color: #d299c2;
+	color: #c1c161;
 	font-weight: bolder;
 }
 
@@ -192,6 +193,17 @@ textarea {
 	padding: 15px;
 	margin: 5px;
 	border: 3px solid black;
+}
+
+.Wishlist{
+	display: flex;
+	flex-direction: column;
+}
+
+.wish-product{
+	display: flex;
+	background-color: white;
+
 }
 
 @media only screen and (max-width: 800px) {
