@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Link, Route, Switch} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Header from './Header';
 
 function BrandProducts(props) {
@@ -16,7 +16,6 @@ let [products, setProducts] = useState([])
       })
      }, [])
 
-
      //map -> link to each product details
      // this is my list of beer !
 
@@ -24,14 +23,19 @@ function mapped (){
 return products.map((items) => {
     return (
         <div className="product-list">
-        <div className="prodcuct-img">
-            <img src={items.image_link} className="prodcuct-img"/>
-        </div>
-           <div>
-           <h2>{items.name}</h2>
-            <ul>{items.brand}</ul>
-            <ul><strong>${items.price}</strong></ul>
-           </div>
+            <div>
+                <img src={items.image_link}/>
+            </div>
+
+            <div>
+                <Link to={`/product/${items.id}`}>
+                <h3>{items.name}</h3>
+                    <ul>
+                    <strong>${items.price}</strong>
+                    </ul> 
+                    </Link>
+                    <button>❤︎ add to wishlist</button>
+            </div>
         </div>
     )
     })
@@ -40,7 +44,10 @@ return products.map((items) => {
     return (
         <div >
             {Header()}
-            {mapped()}
+            <div className="flex-product">
+            {products.brand}
+                {mapped()}
+            </div>
         </div>
     );
 }

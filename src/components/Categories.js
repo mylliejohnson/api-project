@@ -29,6 +29,7 @@ function Categories(props) {
 							<ul>
 								<strong>${items.price}</strong>
 							</ul>
+							<button>❤︎ add to wishlist</button>
 						</div>
 					</div>
 			);
@@ -38,7 +39,10 @@ function Categories(props) {
 	return (
 		<div>
 			{Header()}
-			{mapped()}
+			
+			<div className="flex-product">
+            	{mapped()}
+            </div>
 		</div>
 	);
 }

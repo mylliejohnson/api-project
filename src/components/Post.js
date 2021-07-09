@@ -12,8 +12,6 @@ function Post(props) {
 		setSignUp(copySignUp);
 	};
 
-
-
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		console.log(signUp);
@@ -26,7 +24,7 @@ function Post(props) {
 	};
 
 	return (
-		<div>
+		<div className="Post">
 			<Header />
 			<div className="center-form">
 				<h2>Enter your email for newsletters, tutorials and more!</h2>

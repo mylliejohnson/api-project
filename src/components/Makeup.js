@@ -1,7 +1,6 @@
 // --------- BRANDS AND CATEGORIES LISTS -------- //
 
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 
@@ -111,7 +110,7 @@ function Makeup(props) {
 			<div className="Makeup">
 				<div className="listOfBrands">
 					<h2>Shop Brands</h2>
-					<ul className="ul" style={{ columns: '4' }}>
+					<ul className="ul">
 						{brandLink()}
 					</ul>
 				</div>
