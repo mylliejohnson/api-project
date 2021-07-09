@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Header from './Header';
+import { Link } from 'react-router-dom';
 
 // THIS IS THE WISH LIST!
 
@@ -25,7 +26,9 @@ const showWishes = () => {
         return (
             <div>
             <img src={item.image_link} style={{width:'100px'}}/>
+            <Link to={`/product/${item.id}`}>
                 <h3>{item.name}</h3>
+                </Link>
             </div>
         )
     })

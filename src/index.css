@@ -1,9 +1,13 @@
 body {
-  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+  background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%);
   margin: 0;
   background-repeat: no-repeat;
   font-family: monospace;
-  background-size:contain;
+  background-size: cover;
+  height:100%;
 }
 
 
+html {
+  min-height:100%;
+}

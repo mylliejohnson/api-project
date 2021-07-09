@@ -7,7 +7,6 @@ function Categories(props) {
 	let [products, setProducts] = useState([]);
 
 	useEffect(() => {
-		console.log('is this effect working?');
 		axios
 			.get(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${props.match.params.catProducts}`)
 			.then((res) => {
@@ -18,20 +17,17 @@ function Categories(props) {
 	function mapped() {
 		return products.map((items) => {
 			return (
-			
-					<div className="product-list">
-						<div>
-							<img src={items.image_link} style={{ width: '150px' }} />
-						</div>
-						<div>
-							<h2>{items.name}</h2>
-							<ul>{items.brand}</ul>
-							<ul>
-								<strong>${items.price}</strong>
-							</ul>
-							<button>❤︎ add to wishlist</button>
-						</div>
+				<div className="product-list">
+					<div>
+						<img src={items.image_link} style={{ width: '150px' }} />
 					</div>
+					<div>
+						<Link to={`/product/${items.id}`}>
+							<h3>{items.name}</h3>
+							<strong>${items.price}</strong>
+						</Link>
+					</div>
+				</div>
 			);
 		});
 	}
@@ -39,10 +35,8 @@ function Categories(props) {
 	return (
 		<div>
 			{Header()}
-			
-			<div className="flex-product">
-            	{mapped()}
-            </div>
+
+			<div className="flex-product">{mapped()}</div>
 		</div>
 	);
 }

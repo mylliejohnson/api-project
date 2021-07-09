@@ -23,7 +23,7 @@ let [product, setProduct] = useState([])
       
         <div style={{margin:"auto"}}>
         <Header/>
-           <div className="SingleProduct" style={{width:"70%"}}>
+           <div className="SingleProduct" style={{width:"70%", marginLeft:'auto', marginRight:'auto'}}>
             <h1>{product.name}</h1>
             <h3>${product.price}</h3>
             <img src={product.image_link} /> 
