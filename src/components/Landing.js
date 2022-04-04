@@ -7,22 +7,24 @@ function Landing(props) {
 	let [quote, setQuote] = useState({});
 
 	useEffect(() => {
-		axios.get(`https://iron-cors-anywhere.herokuapp.com/https://api.fisenko.net/quotes/`).then((res) => {
-			setQuote(res.data);
-			console.log(quote);
+		axios.get(`https://api.adviceslip.com/advice`).then((res) => {
+			setQuote(res.data.slip);
 		});
 	}, []);
 
+
+
 	return (
 		<div className="landing">
-		<div className="headings">
-			<h1>IRONMAKEUP</h1>
-			<h2>the one stop beauty shop</h2>
+			<div className="headings">
+				<h1>IRONMAKEUP</h1>
+				<h2>the one stop beauty shop</h2>
 			</div>
 
 			<div className="quote">
-				<i>{quote.text} </i>
-				<p></p><strong>- {quote.author}</strong><p></p>
+				<span>advice for the soul:</span>
+				<br />
+				<i>{quote.advice} </i>
 			</div>
 
 			<div className="lets-shop">
